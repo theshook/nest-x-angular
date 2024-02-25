@@ -1,0 +1,18 @@
+<div class="todo-form">
+  <h1 class="todo-form__title">Create New Todo</h1>
+  <form class="todo-form__form" [formGroup]="todoForm" (ngSubmit)="submit()">
+    <div class="todo-form__control">
+      <label for="title">Title</label>
+      <input class="todo-form__input" type="text" id="title" formControlName="title" />
+    </div>
+    <div class="todo-form__control">
+      <label for="description">Description</label>
+      <input class="todo-form__input" type="text" id="description" formControlName="description" />
+    </div>
+    <div>
+      <button class="btn" type="submit" [disabled]="todoForm.invalid">
+        {{ isEdit ? 'Update' : 'Create' }}
+      </button>
+    </div>
+  </form>
+</div>

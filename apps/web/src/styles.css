@@ -1,0 +1,136 @@
+:root {
+  --text: #1a1a1a;
+  --hover: #4d4d4d;
+  --primary: #838383;
+  --secondary: #989898;
+  --tertiary: #b3b3b3;
+  --white: #eaeaea;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  background-color: var(--white);
+}
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.todo-form {
+  border: 2px dotted var(--primary);
+  width: 375px;
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
+
+.todo-form__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.todo-form__form {
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-form__control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.todo-form__input {
+  padding: 0.5rem;
+  border: 1px solid var(--primary);
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.todo-list {
+  max-width: 1200px;
+  width: 100%;
+  display: block;
+}
+
+.todo-list__table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  overflow-x: auto;
+}
+
+.todo-list__table thead {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.todo-list__table th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+.todo-list__table th:last-of-type,
+.todo-list__table td:last-of-type {
+  text-align: right;
+}
+
+.todo-list__table th:first-of-type {
+  border-top-left-radius: 0.25rem;
+}
+
+.todo-list__table th:last-of-type {
+  border-top-right-radius: 0.25rem;
+}
+
+.todo-list__table tr:last-of-type td:first-of-type {
+  border-bottom-left-radius: 0.25rem;
+}
+
+.todo-list__table tr:last-of-type td:last-of-type {
+  border-bottom-right-radius: 0.25rem;
+}
+
+.todo-list__table tr:nth-child(even) {
+  background-color: var(--tertiary);
+}
+
+.todo-list__table tbody tr:hover {
+  background-color: var(--hover);
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn:disabled,
+.btn:disabled:hover {
+  background-color: var(--tertiary);
+  cursor: not-allowed;
+}
+
+.btn:hover {
+  background-color: var(--text);
+}
+
+.btn--secondary {
+  background-color: var(--secondary);
+}
+
+.btn--danger {
+  background-color: var(--text);
+}
+
+.btn--danger:hover {
+  background-color: var(--hover);
+}

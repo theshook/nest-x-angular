@@ -1,0 +1,36 @@
+<div class="todo-list">
+  <p *ngIf="todos.length === 0; else todoList">Add a new Todo</p>
+
+  <ng-template #todoList>
+    <table class="todo-list__table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Completed</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let todo of todos">
+          <td>{{ todo.title }}</td>
+          <td>{{ todo.description }}</td>
+          <td>{{ todo.completed ? 'Yes' : 'No' }}</td>
+          <td>
+            <input
+              type="checkbox"
+              [checked]="todo.completed"
+              (click)="completed(todo)"
+            />
+            <button class="btn btn--secondary" (click)="edit(todo)">
+              Edit
+            </button>
+            <button class="btn btn--danger" (click)="delete(todo._id)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-template>
+</div>
